@@ -9,8 +9,14 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <Greet top={150} />
-      <Logo top={220} />
-      <FlatButton text={'Get Started'} onPress={() => navigation.navigate('Login')} top={380} />
+      <Logo 
+      top={250}
+      />
+      <FlatButton 
+      text={'Get Started'} 
+      onPress={() => navigation.navigate('Login')} 
+      top={380}
+      width={168} />
     </View>
 
   )

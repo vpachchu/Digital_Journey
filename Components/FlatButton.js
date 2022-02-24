@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 import { useFonts } from "expo-font";
 
-export default function FlatButton({ text, onPress, top }) {
+export default function FlatButton({ text, onPress, top, width }) {
 
    const [loaded] = useFonts(
       {
@@ -13,10 +13,11 @@ export default function FlatButton({ text, onPress, top }) {
    }
 
    return (
-      <View top={top}>
+      <View top={top}
+      width={width}>
          <TouchableOpacity
-            onPress={onPress}
-            style={styles.flatButton} >
+            style={styles.flatButton} 
+            onPress={onPress}>
             <Text style={styles.flatButtonText}>{text}</Text>
          </TouchableOpacity>
       </View>
@@ -27,7 +28,7 @@ const styles = StyleSheet.create(
    {
       flatButton: {
 
-         width: 168,
+        
          height: 40,
          backgroundColor: '#000000',
          borderRadius: 20,

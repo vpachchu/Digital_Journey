@@ -5,10 +5,10 @@ export default function Greet({top}) {
 
     const [loaded] = useFonts(
         {
-            SofadiOne: require('../assets/fonts/SofadiOne-Regular.ttf'),
-            Redressed: require('../assets/fonts/Redressed-Regular.ttf'),
-            Akaya: require('../assets/fonts/AkayaTelivigala-Regular.ttf'),
-            Righteous: require('../assets/fonts/Righteous-Regular.ttf'),
+            // SofadiOne: require('../assets/fonts/SofadiOne-Regular.ttf'),
+            // Redressed: require('../assets/fonts/Redressed-Regular.ttf'),
+            // Akaya: require('../assets/fonts/AkayaTelivigala-Regular.ttf'),
+            // Righteous: require('../assets/fonts/Righteous-Regular.ttf'),
             BalsamiqSans: require('../assets/fonts/BalsamiqSans-Regular.ttf')
         }
     )
