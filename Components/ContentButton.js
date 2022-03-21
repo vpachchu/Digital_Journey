@@ -2,10 +2,9 @@ import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 //import { Icon } from 'react-native-paper/lib/typescript/components/Avatar/Avatar';
+import { MaterialIcons } from '@expo/vector-icons';
 
-import {Icon} from 'react-native-vector-icons';
-
-export default function ContentButton({ color, text, top, left, right }) {
+export default function ContentButton({ color, text, top, left, right, iconName ,iconColor}) {
     const [loaded] = useFonts({
 
         BalsamiqSans: require('../assets/fonts/BalsamiqSans-Regular.ttf'),
@@ -17,10 +16,13 @@ export default function ContentButton({ color, text, top, left, right }) {
     }
 
     return (
-        <View top={top} left={left} right={right}>
-            <TouchableOpacity style={styles.container}>
-              
-                <Text style={styles.text}>{text}</Text>
+        <View top={top} left={left} right={right} style={styles.container01} >
+            <TouchableOpacity>
+           <View backgroundColor={color} style={styles.container02}>
+                    {/* <Icon name="rocket" size={30} color="#900" /> */}
+                    <MaterialIcons name={iconName} style={styles.icon} size={30} color={iconColor}/>
+                    <Text style={styles.text} >{text}</Text>
+                </View>
             </TouchableOpacity>
         </View>
     );
@@ -30,18 +32,35 @@ export default function ContentButton({ color, text, top, left, right }) {
 
 const styles = StyleSheet.create({
 
-    container: {
-        width: 120,
-        height: 120,
-        backgroundColor: '#212529',
+    container01: {
+        marginLeft: 20,
+        marginRight: 20,
+        alignItems:'center',
+    
+
+
+    },
+
+    container02: {
+        width: 113,
+        height: 112,
         borderRadius: 20,
-        padding: 10
+        padding: 10,
+        alignItems:'center'
     },
 
     text: {
         fontFamily: 'BalsamiqSans',
         fontSize: 15,
-        color: '#ffffff'
+        color: '#e9ecef',
+        textAlign:'center'
+
+    },
+
+    icon:{
+        margin:8,
+     
+        
 
     }
 

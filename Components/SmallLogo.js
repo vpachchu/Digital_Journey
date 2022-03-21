@@ -15,10 +15,10 @@ const styles = StyleSheet.create(
   {
     Logo: {
 
-      margin: 25,
+      marginTop: 25,
       width: 166,
       height: 76,
-      marginBottom: 10,
+     
 
     }
   })

@@ -27,8 +27,6 @@ const styles = StyleSheet.create(
             fontFamily: 'BalsamiqSans',
             fontSize:18,
             color:'#000000'
-
-
         }
 
 
