@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
-//import { Icon } from 'react-native-paper/lib/typescript/components/Avatar/Avatar';
-import { MaterialIcons } from '@expo/vector-icons';
+import {MaterialIcons} from '@expo/vector-icons';
 
-export default function ContentButton({ color, text, top, left, right, iconName ,iconColor}) {
+export default function ContentButton({ color, text, top, left, right, iconName, iconColor, onPress }) {
     const [loaded] = useFonts({
 
         BalsamiqSans: require('../assets/fonts/BalsamiqSans-Regular.ttf'),
@@ -17,10 +16,10 @@ export default function ContentButton({ color, text, top, left, right, iconName 
 
     return (
         <View top={top} left={left} right={right} style={styles.container01} >
-            <TouchableOpacity>
-           <View backgroundColor={color} style={styles.container02}>
+            <TouchableOpacity onPress={onPress}>
+                <View backgroundColor={color} style={styles.container02}>
                     {/* <Icon name="rocket" size={30} color="#900" /> */}
-                    <MaterialIcons name={iconName} style={styles.icon} size={30} color={iconColor}/>
+                    <MaterialIcons name={iconName} style={styles.icon} size={30} color={iconColor} />
                     <Text style={styles.text} >{text}</Text>
                 </View>
             </TouchableOpacity>
@@ -35,8 +34,8 @@ const styles = StyleSheet.create({
     container01: {
         marginLeft: 20,
         marginRight: 20,
-        alignItems:'center',
-    
+        alignItems: 'center',
+
 
 
     },
@@ -46,21 +45,21 @@ const styles = StyleSheet.create({
         height: 112,
         borderRadius: 20,
         padding: 10,
-        alignItems:'center'
+        alignItems: 'center'
     },
 
     text: {
         fontFamily: 'BalsamiqSans',
         fontSize: 15,
         color: '#e9ecef',
-        textAlign:'center'
+        textAlign: 'center'
 
     },
 
-    icon:{
-        margin:8,
-     
-        
+    icon: {
+        margin: 8,
+
+
 
     }
 

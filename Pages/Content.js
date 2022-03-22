@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import ContentButton from '../Components/ContentButton';
 import SmallLogo from '../Components/SmallLogo';
 
-export default function Content() {
+export default function Content({navigation}) {
   return (
     <View style={styles.container}>
       <SmallLogo top={-30} />
@@ -13,7 +13,8 @@ export default function Content() {
           text={'My Diary'}
           color={'#090c09'}
           iconName={'book'}
-          iconColor={'#e9ecef'} />
+          iconColor={'#e9ecef'}
+          onPress={()=>navigation.navigate('MyDiary')} />
 
         <ContentButton
           text={'Write a Blog'}
