@@ -12,7 +12,14 @@ export default function MultilineTextBox() {
 
     return (
         <View style={styles.textBoxContainer}>
-            <TextInput multiline={true} scrollEnabled={true} style={styles.textBox} placeholder='Add the text here...'></TextInput>
+            <TextInput
+                multiline={true}
+                scrollEnabled={true}
+                style={styles.textBox}
+                placeholder='Add the text here...'
+                >
+
+            </TextInput>
         </View>
     )
 
@@ -42,6 +49,8 @@ const styles = StyleSheet.create(
             borderColor: '#818181',
             borderWidth: 1,
             borderRadius: 25,
+
+            
 
 
 
