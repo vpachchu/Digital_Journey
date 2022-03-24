@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import ContentButton from '../Components/ContentButton';
 import SmallLogo from '../Components/SmallLogo';
 
-export default function Content({navigation}) {
+export default function Content({ navigation }) {
   return (
     <View style={styles.container}>
       <SmallLogo top={-30} />
@@ -14,13 +14,14 @@ export default function Content({navigation}) {
           color={'#090c09'}
           iconName={'book'}
           iconColor={'#e9ecef'}
-          onPress={()=>navigation.navigate('MyDiary')} />
+          onPress={() => navigation.navigate('MyDiary')} />
 
         <ContentButton
           text={'Write a Blog'}
           color={'#1f221f'}
           iconName={'message'}
-          iconColor={'#e9ecef'} />
+          iconColor={'#e9ecef'} 
+          onPress={()=>navigation.navigate('DatePickers')}/>
 
       </View>
 
@@ -41,16 +42,16 @@ export default function Content({navigation}) {
 
       <View style={styles.buttonContainer}>
         <ContentButton
-          text={'Summery of the Day'}
+          text={'Memo'}
           color={'#666866'}
-          iconName={'auto-fix-high'}
+          iconName={'speaker-notes'}
           iconColor={'#e9ecef'} />
 
-        {/* <ContentButton
-          text={'My Blog'}
+        <ContentButton
+          text={'Summery of the Day'}
           color={'#a9aaa9'}
-          iconName={'book'}
-          iconColor={'#e9ecef'} /> */}
+          iconName={'auto-fix-high'}
+          iconColor={'#e9ecef'} />
 
       </View>
 

@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup'
 import Content from './Pages/Content';
 import MyDiary from './Pages/MyDiary';
+import DatePickers from './Components/DatePicker'
 
 const Stack= createNativeStackNavigator()
 
@@ -21,6 +22,7 @@ export default function App() {
           <Stack.Screen name="Signup" component={Signup}/>
           <Stack.Screen name="Content" component={Content}/>
           <Stack.Screen name="MyDiary" component={MyDiary}/>
+          <Stack.Screen name="DatePickers" component={DatePickers}/>
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
