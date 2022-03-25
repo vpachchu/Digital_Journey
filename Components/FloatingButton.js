@@ -1,55 +1,40 @@
-// import React from 'react';
-// import { FAB } from 'react-native-elements';
-// import { FloatingAction } from 'react-native-floating-action';
-// import { View, StyleSheet } from 'react-native';
+import React from 'react';
+import { FAB } from 'react-native-paper';
+import { View, StyleSheet } from 'react-native';
+import {MaterialIcons} from '@expo/vector-icons';
 
-// export default function FloatingButton() {
-//     return (
-//         <View>
-//             {/* <FAB title={''} style={styles.fab} size={'small'}/> */}
-//             <FloatingAction
-              
-//                 actions={action} 
-//                 onPressItem={
-//                     (name) => {
-//                       console.log(`selected button: ${name}`);
-//                     } } />
-//         </View>
+export default function FloatingButton(onPress) {
+    return (
+        <View>
+            <FAB
+             style={styles.fab} 
+             size={'small'}
+             onpress={onPress}
+             color={'#ffffff'}
+             icon={'undo'}
+          
+             />
+         
+        </View>
 
-//     )
+    )
 
-// }
+}
 
-// const styles = StyleSheet.create(
-//     {
-//         fab: {
-//             width: 60,
-//             height: 60,
-//             borderRadius: 30,
-//             backgroundColor: '#ee6e73',
-//             position: 'absolute',
-//             bottom: 20,
-//             left: 89,
-//         }
-//     }
-// )
+const styles = StyleSheet.create(
+    {
+        fab: {
+            height:60,
+            width:60,
+            borderRadius:30,
+            backgroundColor: '#212529',
+            position: 'absolute',
+            bottom:30,
+            right:89,
+          
+        }
+    }
+)
 
-// const action = [
-//     {
 
-//         text: 'Calender',
-//         icon:require('../assets/icons/baseline_calendar_month_black_24dp.png'),
-//         name: 'bt_language',
-//         position: 1
 
-//     },
-//     {
-
-//         text: 'add',
-//         icon:require('../assets/icons/baseline_calendar_month_black_24dp.png'),
-//         name: 'l',
-//         position: 2
-
-//     },
-
-// ]

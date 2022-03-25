@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     },
 
     container02: {
-        width: 113,
-        height: 112,
+        width: 110,
+        height: 110 ,
         borderRadius: 20,
         padding: 10,
         alignItems: 'center'
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
     text: {
         fontFamily: 'BalsamiqSans',
-        fontSize: 15,
+        fontSize: 14,
         color: '#e9ecef',
         textAlign: 'center'
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useFonts } from 'expo-font';
-import { TextInput, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
 
-export default function MultilineTextBox() {
+export default function ReadableTextBox() {
 
     const [loaded] = useFonts({
 
@@ -12,16 +12,15 @@ export default function MultilineTextBox() {
 
     return (
         <View style={styles.textBoxContainer}>
-            <TextInput
+            <Text
                 multiline={true}
                 scrollEnabled={true}
                 style={styles.textBox}
-                placeholder='Add the text here...'
                 selectionColor={'#adb5bd'}
                 
                 >
 
-            </TextInput>
+            </Text>
         </View>
     )
 
@@ -38,7 +37,7 @@ const styles = StyleSheet.create(
         },
         textBox: {
             fontFamily: 'BalsamiqSans',
-            fontSize: 15,
+            fontSize: 18,
             textAlignVertical: 'top',
             textAlign: 'left',
 
@@ -57,6 +56,7 @@ const styles = StyleSheet.create(
 
 
 
-        }
+        },
+        
     }
 )

@@ -43,6 +43,7 @@ const DatePickers= () => {
           is24Hour={true}
           onChange={onChange}
           style={styles.datePicker}
+         
         />
       )}
     </View>

@@ -30,7 +30,9 @@ export default function Content({ navigation }) {
           text={'Budget Planning'}
           color={'#333633'}
           iconName={'attach-money'}
-          iconColor={'#e9ecef'} />
+          iconColor={'#e9ecef'} 
+          onPress={()=>navigation.navigate('DiaryOnSelectedDate')}/>
+         
 
         <ContentButton
           text={'Relationship Status'}
