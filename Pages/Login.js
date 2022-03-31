@@ -24,9 +24,17 @@ export default function Login({navigation}) {
         ()=>
         {
           // navigation.navigate('Content')
-          axios.get('http://10.0.2.2:8081/login?username=Tom&password=tmy@123')
-          .then((res)=>{
-            console.log(res.config.data)
+          // axios.get('http://192.168.1.3/login?username=Tom123&password=123')
+          // .then((res)=>{
+          //   console.log(res.data)
+          // }).catch((error)=>{
+          //   console.log(error)
+          // });
+          console.log('192.168.43.8')
+          axios.get('http://192.168.43.8:8081/login?username=Tom123&password=123')
+          .then((response) => {
+            console.log(response.data);
+          
           }).catch((error)=>{
             console.log(error)
           });
