@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import FlatButton from '../Components/FlatButton';
-import HintText from '../Components/HintText';
+import axios from 'axios';
 import Input from '../Components/Input';
 import SmallLogo from '../Components/SmallLogo';
 import NormalText from '../Components/NormalText';
 
 export default function Login() {
+
+  const [name, setname] = useState("");
+  const [email, setemail] = useState("");
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+  const [rpassword, setrpassword] = useState("");
+
+  const[showElement,setElement]=useState(true);
+
+  checkPassword=()=>{
+    if(password!=rpassword)
+    {
+      setElement(true);
+    }    
+  }
 
   return (
 
@@ -16,34 +31,71 @@ export default function Login() {
       <NormalText
         text={'Name'} />
       <Input
-        placeholder={'eg: Johny Depp'} />
+        placeholder={'eg: Johny Depp'}
+        value={name}
+        onChangeText={(nme) => { setname(nme) }} />
 
       <NormalText
         text={'Username'} />
       <Input
-        placeholder={'eg: JDepp1227'} />
+        placeholder={'eg: JDepp1227'}
+        value={username}
+        onChangeText={(uname) => { setusername(uname) }} />
 
       <NormalText
         text={'Email Id'} />
       <Input
-        placeholder={'eg: johnydepp@gmail.com'} />
+        placeholder={'eg: johnydepp@gmail.com'}
+        value={email}
+        onChangeText={(eml) => { setemail(eml) }} />
 
-      <NormalText
+      {/* <NormalText
         text={'Mobile'} />
       <Input
-        placeholder={'eg: +94773456765'} />
+        placeholder={'eg: +94773456765'} /> */}
 
 
       <NormalText
         text={'Password'} />
-      <Input />
+      <Input
+        value={password}
+        onChangeText={(pswd) => { setpassword(pswd) }} />
 
       <NormalText
         text={'Re-enter Password'} />
-      <Input />
+      <Input
+        value={rpassword}
+        onChangeText={
+          (rpswd) => { setrpassword(rpswd) }
+          } />
 
 
-      <FlatButton text={'Done'} width={150} top={20} />
+      <FlatButton
+        text={'Done'}
+        width={150}
+        top={20}
+        onPress={
+          () => {
+           
+            axios.post('http://192.168.1.3:8081/user',
+            {
+              name:name,
+              email:email,
+              username:username,
+              password:password
+            }).then((reponse)=>{
+              console.log('Successfully data added');
+              console.log('name : '+name+
+                          '\nemail : '+email+
+                          '\nusername : '+username+
+                          '\npassword : '+password);
+
+            }).catch((error) => {
+              console.log(error);
+            })
+          }
+        }
+      />
     </View>
   )
 }
