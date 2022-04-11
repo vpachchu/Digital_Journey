@@ -1,14 +1,18 @@
 import React from 'react';
 import { useFonts } from 'expo-font';
-import { View, TextInput, StyleSheet } from 'react-native'
+import { View, TextInput, StyleSheet, Keyboard } from 'react-native'
 
 
-export default function Input({placeholder, keyboardtype,top, value,onChangeText,onFocus}) {
+export default function Input(props) {
     const [loaded] = useFonts({
 
         BalsamiqSans: require('../assets/fonts/BalsamiqSans-Regular.ttf'),
         }
     )
+
+    const {placeholder, keyboardtype,top, value,onChangeText,
+        onFocus,autoCapitalize,secureTextEntry}=props
+   
 
     if (!loaded) {
         return null
@@ -17,11 +21,8 @@ export default function Input({placeholder, keyboardtype,top, value,onChangeText
         <View style={styles.inputtextcontainer} top={top}>
             <TextInput
                 style={styles.inputtext}
-                placeholder={placeholder}
-                keyboardType={keyboardtype}  
-                value={value} 
-                onChangeText={onChangeText}
-                onFocus={onFocus}
+                {...props}
+                     
                 />
         </View>
     );
