@@ -38,15 +38,15 @@ export default function Login({ navigation }) {
 
   }
 
-  const isUsername = (username) => {
-    axios.get('http://192.168.1.3:8080/username?username=' + username)
+  const isUsername = (uname) => {
+    axios.get('http://192.168.1.3:8080/username?username=' + uname)
       .then((response) => {
         console.log(response.data);
         setunameError(true);
         })
       .catch((error) => {
         console.log(error);
-      up})
+      })
 
   }
 
@@ -93,7 +93,7 @@ export default function Login({ navigation }) {
     }
 
     // if username already exist!
-    if (setunameError(true)) {
+    if (isUsername(username)) {
       return updateError('Username already exist!!', setError);
     }
 
