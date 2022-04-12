@@ -15,7 +15,7 @@ export default function Login({ navigation }) {
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [rpassword, setrpassword] = useState("");
-  const [unameError,setunameError]=useState(false);
+  const [unameError, setunameError] = useState(false);
   const [error, setError] = useState("");
 
   const signup = () => {
@@ -25,34 +25,23 @@ export default function Login({ navigation }) {
         email: email,
         username: username,
         password: password
-      }).then(() => {
+      }).then((response) => {
+
+      
         console.log('Successfully data added');
+        console.log('status code : OK '+ response.status);
         console.log('name : ' + name +
           '\nemail : ' + email +
           '\nusername : ' + username +
           '\npassword : ' + password);
         navigation.navigate('Login');
-      }).catch((error) => {
+      }).catch((error)=>{
         console.log(error);
+       
       })
-
   }
 
-  const isUsername = (uname) => {
-    axios.get('http://192.168.1.3:8080/username?username=' + uname)
-      .then((response) => {
-        console.log(response.data);
-        setunameError(true);
-        })
-      .catch((error) => {
-        console.log(error);
-      })
-
-  }
-
-  const isValidObj = (obj) => {
-    return Object.values(obj).every(value => value.trim())
-  }
+ 
 
   const isValidEmail = (value) => {
     const regx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -92,10 +81,11 @@ export default function Login({ navigation }) {
       return updateError('Invalid username! \nShould contain atleast 5 characters', setError);
     }
 
-    // if username already exist!
-    if (isUsername(username)) {
-      return updateError('Username already exist!!', setError);
-    }
+    // // if username already exist!
+    // if (setunameError) {
+    //   return updateError('Username already exist!!', setError);
+    // }
+
 
     //  email address should be valid
     if (!isValidEmail(email)) {
@@ -140,7 +130,8 @@ export default function Login({ navigation }) {
       <Input
         placeholder={'eg: JDepp1227'}
         value={username}
-        onChangeText={(uname) => { setusername(uname) }} />
+        onChangeText={(uname) => { setusername(uname) }}
+      />
 
       <NormalText
         text={'Email Id'} />
@@ -174,7 +165,7 @@ export default function Login({ navigation }) {
         onChangeText={
           (rpswd) => { setrpassword(rpswd) }
         }
-       
+
         autoCapitalize='none'
         secureTextEntry
       />

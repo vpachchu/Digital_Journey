@@ -7,12 +7,12 @@ export default function Input(props) {
     const [loaded] = useFonts({
 
         BalsamiqSans: require('../assets/fonts/BalsamiqSans-Regular.ttf'),
-        }
+    }
     )
 
-    const {placeholder, keyboardtype,top, value,onChangeText,
-        onFocus,autoCapitalize,secureTextEntry}=props
-   
+    const { placeholder, keyboardtype, top, value, onChangeText,
+        onFocus, autoCapitalize, secureTextEntry, onBlur } = props
+
 
     if (!loaded) {
         return null
@@ -22,8 +22,9 @@ export default function Input(props) {
             <TextInput
                 style={styles.inputtext}
                 {...props}
-                     
-                />
+
+
+            />
         </View>
     );
 }
@@ -33,8 +34,8 @@ const styles = StyleSheet.create(
 
         inputtext: {
             fontFamily: 'BalsamiqSans',
-            fontSize:16,
-            color:'#464846',
+            fontSize: 16,
+            color: '#464846',
 
             borderColor: '#818181',
             borderWidth: 1,
@@ -42,15 +43,15 @@ const styles = StyleSheet.create(
 
             width: 250,
             height: 40,
-            padding:5,
-            textAlign:'center',
-            
+            padding: 5,
+            textAlign: 'center',
+
 
         },
-        inputtextcontainer:{
-            marginBottom:15
+        inputtextcontainer: {
+            marginBottom: 15
         }
 
-       
+
     }
 )
